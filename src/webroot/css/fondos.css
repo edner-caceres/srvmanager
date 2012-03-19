@@ -1,0 +1,56 @@
+/* 
+    Document   : fondos
+    Created on : 14-01-2011, 02:51:06 PM
+    Author     : Edner Elvis Caceres Lazo
+    Description:
+        Fondos de la aplicacion
+*/
+
+/* para el formulario login*/
+#cabecera{
+    background: transparent url('../img/fondo-logo.jpg');
+    background-attachment: scroll;
+}
+
+#cabecera h1{
+    font-size: 16px;
+    color: #003366;
+}
+#cabecera h2{
+    font-size: 14px;
+    color: #003366;
+}
+#cabecera h3{
+    font-size: 12px;
+    color: #003366;
+    font-weight: normal;
+}
+
+.logo-login{
+    padding-top: 15px;
+    background: transparent url('../img/keychain_access.png')  right center  no-repeat;
+}
+.fondo-login-institucion{
+    padding: 30px 30px 30px 100px;
+    font-family: arial;
+    background: transparent url('../img/logo_institucion.gif') 5px center no-repeat;
+}
+/* para sca*/
+.fondo-buscar {
+    background-image:url(../img/search-user.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.fondo-ordenar {
+    background-image:url(../img/sort-user.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+}
+.informacion {
+    color: #6484B1;
+    padding: 20px 5px 5px 130px !important;
+    background-image: url("../img/information128x128.png");
+    background-repeat:no-repeat;
+    text-align: justify !important;
+}

@@ -1,0 +1,2 @@
+1321327253
+a:5:{s:9:"groupname";a:4:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";i:16;}s:3:"gid";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:6;s:3:"key";s:7:"primary";}s:7:"members";a:4:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";s:0:"";s:6:"length";i:16;}s:11:"description";a:4:{s:4:"type";s:6:"string";s:4:"null";b:1;s:7:"default";N;s:6:"length";i:255;}s:4:"type";a:4:{s:4:"type";s:45:"enum('generic','mail','ftp','web','database')";s:4:"null";b:0;s:7:"default";s:7:"generic";s:6:"length";i:8;}}

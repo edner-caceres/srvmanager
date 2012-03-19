@@ -1,0 +1,30 @@
+<div class="ftpUsers form">
+<?php echo $this->Form->create('FtpUser');?>
+	<fieldset>
+ 		<legend><?php __('Add Ftp User'); ?></legend>
+	<?php
+		echo $this->Form->input('name');
+		echo $this->Form->input('email');
+		echo $this->Form->input('userid');
+		echo $this->Form->input('gid', array('options'=>$ftpGroups));
+		echo $this->Form->input('passwd');
+		echo $this->Form->input('status', array('options'=>array('expired'=>'Cuenta expirada','enable'=>'Cuenta Habilitada','disable'=>'Cuenat Deshabilitada','quota_exeded'=>'Cuenat exedio su cuota de disco')));
+		echo $this->Form->input('expired');
+		echo $this->Form->input('homedir');
+                echo $this->Form->input('enable_database', array('options'=>array('mysql'=>'MySQL', 'postgres'=>'PostgreSQL'), 'multiple' => 'checkbox', 'selected'=>'mysql'));
+
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit', true));?>
+</div>
+<div class="actions">
+	<h3><?php __('Actions'); ?></h3>
+	<ul>
+
+		<li><?php echo $this->Html->link(__('List Ftp Users', true), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Ftp Groups', true), array('controller' => 'ftp_groups', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ftp Group', true), array('controller' => 'ftp_groups', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ftp Quota Limits', true), array('controller' => 'ftp_quota_limits', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ftp Quota Limit', true), array('controller' => 'ftp_quota_limits', 'action' => 'add')); ?> </li>
+	</ul>
+</div>

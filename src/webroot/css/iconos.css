@@ -1,0 +1,291 @@
+/* 
+    Document   : iconos
+    Created on : 13-01-2011, 07:23:54 AM
+    Author     : Edner Elvis Caceres Lazo
+    Description:
+        Iconos usados en la aplicacion.
+*/
+
+
+/*
+    iconos 16x16
+*/
+/* compartidos */
+.icon-add{
+    background-image: url(../img/shared/add16x16.png) !important;
+}
+
+.icon-formulario-add {
+    background-image:url(../img/shared/application-form-add16x16.png) !important;
+}
+.icon-edit{
+    background-image: url(../img/shared/pencil16x16.png) !important;
+}
+.icon-formulario-edit {
+    background-image:url(../img/shared/application-form-edit16x16.png) !important;
+}
+
+.icon-delete{
+    background-image: url(../img/shared/delete16x16.png) !important;
+}
+.icon-error{
+    background-image: url(../img/shared/exclamation16x16.gif) !important;
+}
+.icon-buscar {
+    background-image:url(../img/shared/search16x16.png) !important;
+}
+
+.icon-guardar{
+    background-image: url(../img/shared/save16x16.gif) !important;
+}
+
+.icon-atras {
+    background-image:url(../img/shared/previous16x16.png) ! important;
+}
+.icon-imprimir{
+    background-image:url(../img/shared/print16x16.png) !important;
+}
+.icon-ok{
+    background-image: url(../img/shared/tick16x16.png) !important;
+}
+
+.icon-information{
+    background-image: url(../img/shared/information16x16.png) !important;
+}
+
+.icon-pass-edit {
+    background-image:url(../img/shared/lock-edit16x16.png) !important;
+}
+
+.icon-filtro {
+    background-image:url(../img/shared/stock-autofilter16x16.png) !important;
+}
+.icon-cancelar-filtro {
+    background-image:url(../img/shared/stock-delete-autofilter16x16.png) !important;
+}
+.icon-expandir-arbol {
+    background-image: url(../img/shared/expand-all16x16.gif) !important;
+}
+.icon-colapsar-arbol {
+    background-image: url(../img/shared/collapse-all16x16.gif) !important;
+}
+.icon-refrescar {
+    background-image: url(../../../libs/ext-4.0.2/resources/themes/images/default/grid/refresh.gif) !important;
+}
+.icon-sort-asc {
+    background-image: url(../../../libs/ext-4.0.2/resources/themes/images/default/grid/hmenu-asc.gif) !important;
+}
+.icon-sort-desc {
+    background-image: url(../../../libs/ext-4.0.2/resources/themes/images/default/grid/hmenu-desc.gif) !important;
+}
+.icon-cancelar{
+    background-image: url(../img/shared/button_cancel16x16.png) !important;
+}
+
+.seguridad {
+  background: url(../img/shared/seguridad.png) 0px 4px no-repeat !important;
+}
+
+.icon-online {
+    background-image:url(../img/shared/status_online.png) !important;
+}
+.icon-offline {
+    background-image:url(../img/shared/status_offline.png) !important;
+}
+.icon-usuario {
+    background-image:url(../img/1253486757_Client.png) !important;
+}
+.icon-salir {
+    background-image:url(../img/shared/salir16x16.png) !important;
+}
+.icon-list {
+    background-image:url(../img/shared/application_view_detail16x16.png) !important;
+}
+/* del toolbar */
+.icon-info-16{
+    background-image: url(../img/scp/user-info16x16.png) !important;
+}
+
+.icon-gestion-16 {
+    background-image: url(../img/scp/kontact_date16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-turno-16 {
+    background-image: url(../img/scp/file-temporary16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-unidad-16 {
+    background-image:url(../img/scp/department16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.sub-unidad {
+    background-image:url(../img/scp/building16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.unidad {
+    background-image:url(../img/scp/chart_organisation16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-tabla-unidades16 {
+    background-image:url(../img/scp/table-row-insert16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-cargos-16 {
+    background-image: url(../img/scp/findjob16x16.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-horario {
+    background-image:url(../img/scp/shedule-aux16x16.png) !important;
+}
+
+.icon-asistencia {
+    background-image:url(../img/scp/file-temporary16x16.png) !important;
+}
+.icon-resumen {
+    background-image:url(../img/scp/view-detailed16x16.png) !important;
+}
+/* para sca*/
+.icon-home {
+    background-image:url(../img/shared/home16x16.png) !important;
+}
+.icon-scp {
+    background-image:url(../img/scp/user_male16x16.png) !important;
+}
+/*
+    iconos 24x24
+*/
+/*
+    iconos 32x32
+*/
+.icon-add-server {
+    background-image:url(../img/ftp/server_add.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-edit-server {
+    background-image:url(../img/ftp/server_edit.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-delete-server {
+    background-image:url(../img/ftp/server_delete.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-information-server {
+    background-image:url(../img/ftp/server_information.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-statistics-server {
+    background-image:url(../img/ftp/server_chart.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-diagnosis-server {
+    background-image:url(../img/ftp/server_error.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+/* para sca */
+.icon-add-aux {
+    background-image:url(../img/scp/add-user.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-delete-aux{
+    background-image: url(../img/scp/minus-white32x32.png) !important;
+}
+.icon-edit-aux{
+    background-image: url(../img/scp/pencil32x32.png) !important;
+}
+
+.icon-buscar-aux {
+    background-image:url(../img/scp/search-user-icon.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-ordenar-aux {
+    background-image:url(../img/scp/sort-user-icon.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+}
+
+.icon-refresh-aux{
+    background-image: url(../img/scp/update32x32.png) !important;
+}
+.icon-loading{
+    background-image: url(../img/scp/loading-anim.gif) !important;
+}
+.icon-info-32{
+    background-image: url(../img/scp/user_inf32x32.png) !important;
+}
+
+.icon-horario-aux {
+    background-image:url(../img/srr/calendar32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-report-aux {
+    background-image:url(../img/scp/report32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-credencial-aux {
+    background-image:url(../img/scp/user_info32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-unidad-32 {
+    background-image:url(../img/scp/department32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-gestion-32 {
+    background-image: url(../img/scp/kontact_date32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-turno-32 {
+    background-image: url(../img/scp/file_temporary32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.icon-cargos-32 {
+    background-image: url(../img/scp/findjob32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* para srr */
+.icon-day-view {
+    background-image:url(../img/srr/calendar_view_day32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-week-view {
+    background-image:url(../img/srr/calendar_view_week32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.icon-month-view {
+    background-image:url(../img/srr/calendar_view_month32x32.png) !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
