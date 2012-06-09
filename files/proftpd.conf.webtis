@@ -1,0 +1,128 @@
+ServerName			"Servidor de WEBTIS de Informatica-Sistemas"
+ServerIdent			on "FTP Server ready."
+ServerAdmin			ecaceres@cs.umss.edu.bo
+ServerType			standalone
+DefaultServer			on
+AccessGrantMsg			"User %u logged in."
+DeferWelcome			off
+
+DefaultRoot			~
+
+AuthPAMConfig			proftpd
+AuthOrder			mod_sql.c
+
+IdentLookups			off
+UseReverseDNS			off
+
+Port				21
+
+Umask				022
+
+ListOptions			"-a"
+
+AllowRetrieveRestart		on
+AllowStoreRestart		on
+
+MaxInstances			20
+
+User				nobody
+Group				nobody
+
+UseSendfile			no
+
+ScoreboardFile			/var/run/proftpd.score
+
+<Global>
+  AllowOverwrite		yes
+  <Limit ALL SITE_CHMOD>
+    AllowAll
+  </Limit>
+</Global>
+
+LogFormat			default	"%h %l %u %t \"%r\" %s %b"
+LogFormat			auth	"%v [%P] %h %t \"%r\" %s"
+
+SystemLog               	/var/log/proftpd/proftpd.log
+
+# TLS
+# Explained at http://www.castaglia.org/proftpd/modules/mod_tls.html
+#TLSEngine			on
+#TLSRequired			on
+#TLSRSACertificateFile		/etc/pki/tls/certs/proftpd.pem
+#TLSRSACertificateKeyFile	/etc/pki/tls/certs/proftpd.pem
+#TLSCipherSuite			ALL:!ADH:!DES
+#TLSOptions			NoCertRequest
+#TLSVerifyClient		off
+##TLSRenegotiate		ctrl 3600 data 512000 required off timeout 300
+#TLSLog				/var/log/proftpd/tls.log
+
+LoadModule mod_sql.c
+LoadModule mod_sql_mysql.c
+LoadModule mod_quotatab.c
+LoadModule mod_quotatab_sql.c
+
+SQLLogFile			/var/log/proftpd/activities.log
+
+SQLAuthTypes            Plaintext Crypt
+SQLAuthenticate         users groups
+
+SQLConnectInfo	hosting@167.157.26.102 hostingadm yrtkn81216
+
+SQLUserInfo     ftp_users userid passwd uid gid homedir shell
+
+SQLGroupInfo    ftp_groups groupname gid members
+
+SQLMinID        500
+
+CreateHome on skel /etc/hskel dirmode 755
+
+SQLUserWhereClause "status='enable' AND 'webtis' IN (SELECT groupname FROM ftp_groups WHERE members LIKE '%%%m%%') AND (expired IS NULL OR expired >= NOW())"
+
+SQLLog PASS updatecount
+SQLNamedQuery updatecount UPDATE "count=count+1, accessed=now() WHERE userid='%u'" ftp_users
+
+SQLLog PASS logaccess
+SQLNamedQuery logaccess INSERT "'%u','%h', now(), 'access'" user_access
+
+SQLLog QUIT logquit
+SQLNamedQuery logquit INSERT "'%u','%h', now(), 'quit'" user_access
+
+SQLLog  STOR,DELE modified
+SQLNamedQuery modified UPDATE "modified=now() WHERE userid='%u'" ftp_users
+
+SQLLog STOR upload
+SQLNamedQuery upload INSERT "'%u', '%h', now(), 'upload file  %f in %d, file  size %b bytes'" user_activities
+
+SQLLog DELE delete
+SQLNamedQuery delete INSERT "'%u', '%h', now(), 'delete file %f in %d, file  size %b bytes'" user_activities
+
+SQLLog RETR download
+SQLNamedQuery download INSERT "'%u', '%h', now(), 'download file  %f in %d, file  size %b bytes'" user_activities
+
+SQLLog CWD changedir
+SQLNamedQuery changedir INSERT "'%u', '%h', now(), 'change dir to %d, current dir is %d'" user_activities
+
+QuotaEngine on
+QuotaDirectoryTally on
+QuotaDisplayUnits Mb
+QuotaShowQuotas on
+
+SQLNamedQuery get-quota-limit SELECT "name, quota_type, per_session, limit_type, bytes_in_avail, bytes_out_avail, bytes_xfer_avail, files_in_avail, files_out_avail, files_xfer_avail FROM ftp_quota_limits WHERE name = '%{0}' AND quota_type = '%{1}'"
+
+SQLNamedQuery get-quota-tally SELECT "name, quota_type, bytes_in_used, bytes_out_used, bytes_xfer_used, files_in_used, files_out_used, files_xfer_used FROM ftp_quota_tallies WHERE name = '%{0}' AND quota_type = '%{1}'"
+
+SQLNamedQuery update-quota-tally UPDATE "bytes_in_used = bytes_in_used + %{0}, bytes_out_used = bytes_out_used + %{1}, bytes_xfer_used = bytes_xfer_used + %{2}, files_in_used = files_in_used + %{3}, files_out_used = files_out_used + %{4}, files_xfer_used = files_xfer_used + %{5} WHERE name = '%{6}' AND quota_type = '%{7}'" ftp_quota_tallies
+
+SQLNamedQuery insert-quota-tally INSERT "%{0}, %{1}, %{2}, %{3}, %{4}, %{5}, %{6}, %{7}" ftp_quota_tallies
+
+QuotaLimitTable sql:/get-quota-limit
+QuotaTallyTable sql:/get-quota-tally/update-quota-tally/insert-quota-tally
+
+SQLNamedQuery gettally  SELECT "ROUND((bytes_in_used/1048576),2) FROM ftp_quota_tallies WHERE name='%u'"
+SQLNamedQuery getlimit  SELECT "ROUND((bytes_in_avail/1048576),2) FROM ftp_quota_limits WHERE name='%u'"
+SQLNamedQuery getfree   SELECT "ROUND(((ftp_quota_limits.bytes_in_avail-ftp_quota_tallies.bytes_in_used)/1048576),2) FROM ftp_quota_limits,ftp_quota_tallies WHERE ftp_quota_limits.name = '%u' AND ftp_quota_tallies.name = '%u'"
+
+SQLShowInfo   LIST    "226" "Usado %{gettally}MB de %{getlimit}MB. Usted tiene %{getfree}MB de espacio disponible."
+
+RootLogin off
+RequireValidShell off 
