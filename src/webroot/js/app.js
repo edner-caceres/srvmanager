@@ -1,7 +1,7 @@
-/*Ext.Loader.setConfig({
+Ext.Loader.setConfig({
     enabled: true
-});*/
-Ext.Loader.setPath('Ext.ux', '../libs/ext-4.0.2/examples/ux/');
+});
+Ext.Loader.setPath('Ext.ux', '../libs/extjs-4.1.1/examples/ux');
 Ext.application({
     name: 'Hosting',
     appFolder: 'js/app',
@@ -26,10 +26,8 @@ Ext.application({
             title: 'Usuarios FTP',
             layout: 'border',
             items:[{
-                id:'ftp-user-list',
-                xtype: 'ftpuserlist',
-                region:'center',
-                margins: '0 0 5 0'
+                    xtype:'ftpuserlist',
+                    region:'center'
             },{
                 title: 'Detalle de la cuenta seleccionada',
                 collapsible: true,

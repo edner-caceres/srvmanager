@@ -1,6 +1,6 @@
 <?php
 	echo $this->Html->script('app.js', array('inline' => false));
-        echo $this->Html->css('http://localhost/libs/ext-4.0.2/examples/ux/css/ItemSelector.css', 'stylesheet', array('inline' => false));
+        echo $this->Html->css('http://localhost/libs/extjs-4.1.1/examples/ux/css/ItemSelector.css', 'stylesheet', array('inline' => false));
         echo $this->Html->css('chooser.css', 'stylesheet', array('inline' => false));
 ?>
 

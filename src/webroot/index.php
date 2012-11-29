@@ -51,7 +51,8 @@
  */
 	if (!defined('CAKE_CORE_INCLUDE_PATH')) {
 		//define('CAKE_CORE_INCLUDE_PATH',  DS . 'opt' . DS . 'cakephp'); //paar linux
-                define('CAKE_CORE_INCLUDE_PATH', 'C:' . DS . 'xampp' . DS . 'cakephp-1.3'); //para windows
+                //define('CAKE_CORE_INCLUDE_PATH', 'C:' . DS . 'xampp' . DS . 'cakephp-1.3'); //para windows
+                define('CAKE_CORE_INCLUDE_PATH', 'C:' . DS . 'xampp' . DS . 'cakephp-1.3.15'); //para windows
 	}
 
 /**
